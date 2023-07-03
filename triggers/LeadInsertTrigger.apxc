@@ -1,0 +1,32 @@
+trigger LeadInsertTrigger on Lead (before insert) {
+    
+    if (Trigger.isInsert) {
+        if (Trigger.isBefore) {
+            
+            for(Lead lead : Trigger.new) {
+               
+                String postalCode = lead.PostalCode;
+            
+                if(postalCode != null ||String.isNotBlank(postalCode)){
+                    
+                    if(postalCode.contains('-')){
+                        postalCode = postalCode.remove('-');
+                    }
+                    
+                    if(postalCode.isNumeric() && postalCode.length() == 8){
+                        
+                        postalCode = postalCode.substring(0, 5) 
+                                     + '-' + 
+                                     postalCode.substring(5, postalCode.length());
+                        
+                        lead.PostalCode = postalCode;  
+                        
+                    }else{
+                        System.debug('Postal Code '+postalCode+' is not a number or is incomplete');
+                    }     
+                }
+            }    
+        }
+    }
+
+}
