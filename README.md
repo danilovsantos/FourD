@@ -1,12 +1,4 @@
-Case de Technology
-Perfil Desenvolvedor Salesforce
-1
-Instruções
-O case é composto por duas etapas, conforme descrito abaixo.
-O resultado case será avaliado através do fornecimento do repositório Github contendo os códigos
-produzidos.
-Case
-Etapa 1
+
 A Shark Caminhões procurou a FourD para a Implementação do Salesforce em sua Companhia. A
 grande preocupação da Shark Caminhões é que o Backoffce tenha uma experiência normal em
 situações de alta demanda de uso. Para isto, no Processo de Captação de Leads e Conversão de Novos
@@ -16,7 +8,6 @@ Desenvolva uma VisualForce Page que execute uma chamada na API do WhatsApp Web c
 simples mensagem para o número de Telefone do Lead.
 A descrição da mensagem pode ser: “Olá –>Lead<—tudo bem? Informamos que já estamos
 analisando seu cadastro para se tornar um de nossos clientes. Em breve retornaremos o contato”.
-Etapa 2
 Validar através de Trigger em Lead, seguindo o padrão de triggerHandler (before insert / before
 update) que valida o CEP informado no campo Lead.PostalCode, aceitando como entrada o formato
 XXXXX-XXX ou XXXXXXXX apenas números, deverá emitir erro caso receba um outro tipo de
